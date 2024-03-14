@@ -1,0 +1,173 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0 48px;
+}
+.path {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-right: 16px;
+}
+.tree {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  margin: 8px;
+  z-index: 10;
+}
+.divider {
+  background: rgba(27, 27, 27, 0.5);
+  border-bottom: 1px solid rgba(61, 61, 61, 0.7);
+  border-top: 1px solid rgba(61, 61, 61, 0.7);
+  height: 18px;
+  max-width: 80px;
+  min-width: 40px;
+}
+.divider.active {
+  background: var(--border-dark);
+  border-top: 1px solid var(--blue);
+  border-bottom: 1px solid var(--mid-blue);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wrapper:last-child .divider {
+  display: none;
+}
+
+.icon {
+  background: url("../../public/talent-icons-sprite.png");
+  background-position: 0px -50px;
+  background-repeat: no-repeat;
+  border: 1px solid #1b1e22;
+  box-shadow: inset 0 0 10px 0 #090c0e;
+  box-sizing: content-box;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+}
+.icon:hover {
+  background-position-y: 0px;
+}
+.icon::after {
+  content: "";
+  border: 1px solid #505050;
+  box-sizing: content-box;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  background: linear-gradient(
+    #666 0%,
+    #666 50%,
+    #393939 51%,
+    #4c4c4c 80%,
+    #5a5a5a 100%
+  );
+  z-index: -1;
+}
+.icon.active {
+  background-position-y: 0;
+}
+.icon.active::after {
+  box-shadow: 0px 0px 10px 1px rgba(116, 151, 201, 0.5);
+  background: linear-gradient(
+    #7baee8 0%,
+    #6199c7 50%,
+    #283a4e 51%,
+    #3a84c3 80%,
+    #6ea0d8 100%
+  );
+}
+
+.icon.active.crown::after {
+  box-shadow: 0px 0px 10px 1.5px #f3e9a3;
+  background: linear-gradient(
+    #e9d758 0%,
+    #e9d758 50%,
+    #ff8552 51%,
+    #ffd700 80%,
+    #e9d758 100%
+  );
+}
+.icon.crown.active::before {
+  content: "";
+  background: rgba(255, 215, 0, 0.2);
+  box-sizing: content-box;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.icon.active.skull::after {
+  box-shadow: 0px 0px 10px 1.5px #b80c09;
+  background: linear-gradient(
+    #ffa500 0%,
+    #ff8552 50%,
+    #b80c09 51%,
+    #cb4e4c 80%,
+    #ff8552 100%
+  );
+}
+.icon.active.skull::before {
+  content: "";
+  background: rgba(184, 12, 9, 0.2);
+  box-sizing: content-box;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.skill_2 {
+  background-position: -50px -50px;
+}
+
+.skill_3 {
+  background-position: -100px -50px;
+}
+
+.skill_4 {
+  background-position: -150px -50px;
+}
+.skill_5 {
+  background-position: -200px -50px;
+}
+
+.skill_6 {
+  background-position: -250px -50px;
+}
+
+.skill_7 {
+  background-position: -300px -50px;
+}
+
+.skill_8 {
+  background-position: -350px -50px;
+}
+
+@media screen and (max-width: 900px) {
+  .path {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .divider {
+    min-width: 20px;
+  }
+}

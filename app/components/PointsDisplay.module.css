@@ -1,0 +1,42 @@
+.container {
+  background: url("../../public/news-bg.png");
+  border: 1px solid var(--border-dark);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-left: 32px;
+}
+.container.god-mode {
+    box-shadow: 0px 0px 30px 10px rgba(116, 151, 201, 0.5);
+    transition: .5s;
+  }
+
+.total {
+  margin: 0;
+}
+
+.spent {
+} 
+
+.label {
+  margin: 0;
+  color: var(--blue);
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        margin-left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    padding: 16px;
+
+    }
+    .label {
+        font-size: 16px;
+    }
+}

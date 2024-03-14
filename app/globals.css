@@ -1,33 +1,117 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --main-bg: rgb(9, 12, 14);
+  --white: #f2f3f4;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --blue: #5574a0;
+  --mid-blue: #3b5272;
+  --dark-blue: #314159;
+
+  --border-dark: rgba(44, 45, 46, 0.7);
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--white);
+  background: linear-gradient(to bottom, transparent, var(--main-bg))
+    var(--main-bg);
+
+  min-height: 100%;
+  margin: 0;
+  height: 100dvh;
 }
 
-@layer utilities {
-  .text-balance {
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 1px solid var(--blue);
+  max-width: 100vw;
+  background: #1d2531;
+  width: 100%;
+}
+
+.header-content {
+  max-width: 1600px;
+  margin: 16px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-button {
+  cursor: pointer;
+    padding: 0;
+    margin: 0;
+    margin-right: 32px;
+    background: transparent;
+    border: none;
+}
+
+.logo {
+  transform: scale(1.2);
+  margin-left: 64px;
+}
+
+.header-button:hover .wizard,
+.wizard.god-mode {
+  opacity: 1;
+}
+
+.wizard {
+  opacity: 0;
+  transition: opacity .25s .25s ease-in;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+
+.heading {
+}
+.content-wrapper {
+  width: 100%;
+  max-width: 1600px;
+  background: url("../public/talent-calc-bg.png");
+
+  display: flex;
+  border: 1px solid var(--dark-blue);
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+
+@media screen and (max-width: 900px) {
+  .heading {
+    font-size: 24px;
     text-wrap: balance;
+    margin: 16px;
+    text-align: center;
+  }
+
+  .logo {
+    transform: scale(1);
+    margin-left: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header-content {
+    justify-content: center;
+  }
+
+  .heading {
+    font-size: 20px;
   }
 }
